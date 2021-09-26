@@ -1,0 +1,26 @@
+Schema Design For Users DB
+
+CREATE TABLE `users` (
+  `Name` varchar(45) NOT NULL,
+  `DOB` varchar(10) NOT NULL,
+  `Aadhaar_Number` varchar(45) NOT NULL,
+  `Phone_Number` varchar(45) NOT NULL,
+  `Beneficiary_Id` varchar(45) NOT NULL,
+  `Date_Created` datetime NOT NULL,
+  PRIMARY KEY (`Aadhaar_Number`),
+  UNIQUE KEY `Aadhaar_Number_UNIQUE` (`Aadhaar_Number`),
+  UNIQUE KEY `Beneficiary_Id_UNIQUE` (`Beneficiary_Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+---------------------------------------------------------------------------------------------------------------
+
+Schema Design For Booking Appointment DB
+
+CREATE TABLE `booking_appointment` (
+  `Beneficiary_Id` varchar(14) NOT NULL,
+  `Booking_Date` varchar(10) NOT NULL,
+  `Time_Slot` varchar(20) NOT NULL,
+  `Dose_Type` int NOT NULL,
+  `Vaccination_Center` varchar(45) NOT NULL,
+  `Date_Created` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
